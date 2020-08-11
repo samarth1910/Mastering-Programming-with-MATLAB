@@ -1,0 +1,12 @@
+function mx = recursive_max(v)
+    n = length(v);
+    if n == 1
+        mx = v(1) ;
+    else
+        if (v(n) > recursive_max(v(1:(n-1))))
+            mx = v(n);
+        else
+            mx = recursive_max(v(1:(n-1)));
+        end
+    end
+end
