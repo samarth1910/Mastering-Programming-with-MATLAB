@@ -1,0 +1,7 @@
+function output = digit_sum(n)
+    if n == 0
+        output = 0;
+    else 
+        output = mod(n,10) + digit_sum(fix(n/10));  
+    end
+end
