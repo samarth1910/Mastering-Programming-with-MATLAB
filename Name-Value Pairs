@@ -1,0 +1,27 @@
+function db = name_value_pairs(varargin)
+    s =cellfun(@ischar, varargin);
+    if (nargin~= 0)
+        for j = 1:2:length(s)
+            if s(j) == 0
+                db = { };
+                return
+            end
+        end
+    end
+    if (nargin == 0 | (mod(nargin,2)==1))
+            db = { };
+    else
+        n = length(varargin);
+        db = cell((n/2),2);
+        i=1;
+        for ii = 1:n
+            if mod(ii,2) == 1
+                db(i,1) = varargin(ii);
+            else
+                db(i,2) = varargin(ii);
+                 i=i+1;
+            end
+        end
+    end
+end
+        
