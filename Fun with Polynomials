@@ -1,0 +1,14 @@
+function fh = poly_fun(p)
+    function l = po(x)
+        function polynomial = poly(p)
+        n = length(p)
+        if n == 1
+            polynomial = p(1)
+        else
+            polynomial = p(end).* x.^(n-1) + poly(p(1:end-1))
+        end  
+        end
+        l = poly(p)
+    end
+    fh = @po;
+end  
